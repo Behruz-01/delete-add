@@ -22,7 +22,7 @@
     <div class="row mt-5">
       <div class="col-3">
         <h2 class="h4 mb-4">Filter</h2>
-        <form action="#">
+        <form id="filter" action="#">
           <div class="mb-3">
             <label for="search" class="form-label">Search</label>
             <input type="search" class="form-control" id="search" placeholder="Falonchi">
@@ -107,7 +107,7 @@
           <form id="form-add">
             <div class="mb-3">
               <label for="product-title" class="form-label">Title</label>
-              <input type="text" class="form-control" id="title" placeholder="Falon telefon">
+              <input type="text" class="form-control" id="edit-title" placeholder="Falon telefon">
             </div>
             <div class="mb-3">
               <label for="price" class="form-label">Narxi</label>
@@ -137,14 +137,70 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
+
+
+
+
+
+
+  <!-- edit -->
+  <div class="modal fade" id="edits-student-modal" tabindex="-1" aria-labelledby="editsStudentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editsStudentModalLabel">edit product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-edit">
+            <div class="mb-3">
+              <label for="product-title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="edit-title" placeholder="Falon telefon">
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Narxi</label>
+              <input type="number" class="form-control" id="edit-price" placeholder="12400000">
+            </div>
+            <div class="mb-3">
+              <label for="product-manufacturer" class="form-label">Manufacturer</label>
+              <select class="form-select" id="edit-manufacturer">
+                <option selected disabled value="0">Select a manufacturer</option>
+                <!-- manufacturers array bu yerga kelishi kerak -->
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="benefits" class="form-label">Benefits</label>
+              <input type="text" class="form-control" id="edits-benefits" placeholder="150">
+
+              <ul class="d-flex flex-wrap list-unstyled mt-3">
+                <li class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">8gb</button></li>
+                <li class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">128gb</button></li>
+                <li class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">Waterproof</button></li>
+                <li class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">Falon yaxshi tarafi</button></li>
+              </ul>
+            </div>
+            <button type="submit" class="btn btn-primary d-block w-100 p-2">Add product</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+
+
+
+
+
 
 
 
   <template id="phone-template">
     <li class="col-4">
       <div class="card">
-    <img src="https://picsum.photos/300/200" alt="" class="card-img-top">
+    <img src="" alt="" class="card-img-top">
     <div class="card-body">
       <h3 class="card-title cardd-title"></h3>
       <p class="card-text fw-bold"><mark></mark></p>
@@ -161,8 +217,8 @@
       </ul>
 
       <div class="position-absolute top-0 end-0 d-flex">
-        <button class="btn rounded-0 btn-secondary"><i class="fa-solid fa-pen"></i></button>
-        <button class="btn btn-delete rounded-0 btn-danger"><i class="fa-solid fa-trash"></i></button>
+        <button class="btn rounded-0 btn-secondary" data-bs-target="#edits-student-modal" data-bs-toggle="modal"><i style="pointer-events: none;" class="fa-solid fa-pen"></i></button>
+        <button class="btn btn-delete rounded-0 btn-danger"><i style="pointer-events: none;" class="fa-solid fa-trash"></i></button>
       </div>
     </div>
     </div>
